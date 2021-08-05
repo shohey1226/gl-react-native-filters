@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import { GLSL, Shaders, Node } from 'gl-react';
-import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
+//import resolveAssetSource from 'react-native/Libraries/Image/resolveAssetSource';
+import {Image} from 'react-native';
 
 const shaders = Shaders.create({
   F1977: {
@@ -27,7 +28,7 @@ const F1977 = ({ children: t }) =>
     shader={shaders.F1977}
     uniforms={{
       inputImageTexture: t,
-      inputImageTexture2: resolveAssetSource(require('../resources/1977map.png'))
+      inputImageTexture2: Image.resolveAssetSource(require('../resources/1977map.png'))
     }}
   />);
 
